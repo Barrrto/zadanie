@@ -20,7 +20,7 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            width: 100%;
+            width: 100vw;
             height: 100vh;
             background: #1B2738;
             animation: loadAnimation 2.5s;
@@ -87,6 +87,7 @@
             height: 558px;
             left: 636px;
             top: 229px;
+            background-color: #212E42;
             border: 5px solid #424E5F;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 10px;
@@ -180,7 +181,7 @@
             position: absolute;
             width: 314px;
             height: 60px;
-            left: 117.5px;
+            left: 22%;
             top: 0px;
             font-style: normal;
             font-weight: 400;
@@ -196,18 +197,17 @@
             height: 76px;
             left: 790px;
             top: 739px;
-            background-color: #4FD3CA;
+            background-color: #00C3B6;
             border: 7px solid #404C5C;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 20px;
-            transition:0.7s;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            transition: 0.5s;
             cursor: pointer;
         }
             #submit:hover {
-                background-color: red;
-                background-color: #009E93; 
+                background-color: #4FD3CA;
                 border: 7px solid #404C5C;
-                border-radius: 15px;
+                border-radius: 30px;
             }
         #submittext {
             position: absolute;
@@ -246,6 +246,16 @@
             opacity: 1;
             animation: imageanim 2.5s;
             animation-fill-mode: forwards;
+        }
+        @keyframes passwordAnim
+        {
+            0%
+            {
+                transform: scale(0.8);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
@@ -290,7 +300,12 @@
             if (_numb <= 0) {
                 document.getElementById("TEST").innerHTML = "Number cannot be 0 or negative";
             }
+            else if (_numb > 10)
+            {
+                document.getElementById("TEST").innerHTML = "Selected number is too big";
+            }
             else {
+
                 document.getElementById("TEST").innerHTML = nameresult + lastnameresult;
             }
         }
